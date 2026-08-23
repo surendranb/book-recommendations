@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.surendranb/book-recommendations",
+  "description": "Book recommendations for AI agents: topic recommendations from millions of works, blind-date serendipity spins hooked by first sentences, and free public-domain classics.",
+  "repository": {
+    "url": "https://github.com/surendranb/book-recommendations",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "book-recommendations",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": []
+    }
+  ]
+}

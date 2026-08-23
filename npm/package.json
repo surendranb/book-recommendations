@@ -1,0 +1,39 @@
+{
+  "name": "book-recommendations",
+  "version": "0.1.0",
+  "description": "Book recommendations for AI agents: what should I read next, via NPX",
+  "main": "bin/index.js",
+  "bin": {
+    "book-recommendations": "bin/index.js",
+    "book-recommendations-server": "bin/index.js"
+  },
+  "mcpName": "io.github.surendranb/book-recommendations",
+  "scripts": {
+    "test": "node bin/index.js --help"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "books",
+    "book-recommendations",
+    "what-should-i-read-next",
+    "book-discovery",
+    "ai-agent",
+    "anthropic",
+    "claude",
+    "claude-code"
+  ],
+  "author": "Surendran B <reachsuren@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surendranb/book-recommendations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/surendranb/book-recommendations/issues"
+  },
+  "homepage": "https://book-recommendations.builditwithai.xyz",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

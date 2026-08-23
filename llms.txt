@@ -1,0 +1,27 @@
+# Book Recommendations (book recommendations MCP server)
+
+> "What should I read next?" answered for AI agents: topic recommendations from millions of works (OpenLibrary), blind-date serendipity spins hooked by first sentences, and free public-domain classics (Gutenberg). Zero API keys.
+
+## Installation
+- UVX: `uvx book-recommendations`
+- NPX: `npx -y book-recommendations`
+- Curl installer: `curl -fsSL https://book-recommendations.builditwithai.xyz/install | bash`
+- Repository: https://github.com/surendranb/book-recommendations
+
+## When to use
+- "what should I read next" / "recommend books about X" / "books like Y" -> recommend(topic)
+- "surprise me with a book" -> blind_date()
+- "something classic I can read right now for free" -> free_classics(topic?)
+
+## Primary Tools
+- `recommend(topic, count, exclude)`: book recommendations with rating, subjects, first sentence, and read_now flags (free/borrowable at archive.org).
+- `blind_date(count, seed, exclude)`: random shelf at random depth; present first_sentence first, then the reveal.
+- `free_classics(topic, count)`: public-domain books with read-now URLs (fail-soft: points to archive.org alternatives when gutendex is down).
+- `skills_list()` / `skill_read(name)`: presentation + error-recovery playbooks.
+
+## Notes for agents
+- Relay why_picked verbatim; it says how the book was chosen.
+- Blind-date picks get the two-beat reveal: hook (first sentence, subjects, era), then title/author.
+
+## Environment Variables
+- `BOOK_RECOMMENDATIONS_TELEMETRY=false` or `DO_NOT_TRACK=1`: disable anonymous telemetry.

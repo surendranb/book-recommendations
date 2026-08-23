@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "book-recommendations"
+version = "0.1.0"
+description = "Book recommendations for AI agents: 'what should I read next?' answered from millions of works (OpenLibrary) — topic recommendations, blind-date serendipity spins hooked by first sentences, and free public-domain classics. Zero API keys."
+readme = "README.md"
+license = "MIT"
+authors = [
+  {name = "Surendran B", email = "reachsuren@gmail.com"}
+]
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=2.0.0,<3",
+  "requests>=2.31.0",
+]
+keywords = ["book-recommendations", "book-recommendation", "books", "what-to-read", "what-should-i-read-next", "book-discovery", "reading-list", "mcp", "mcp-server", "model-context-protocol", "ai-agent", "claude", "llm", "agentic-workflows"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+
+[project.urls]
+Homepage = "https://book-recommendations.builditwithai.xyz"
+Repository = "https://github.com/surendranb/book-recommendations"
+Issues = "https://github.com/surendranb/book-recommendations/issues"
+
+[project.scripts]
+book-recommendations = "book_recommendations.server:main"
+book-recommendations-server = "book_recommendations.server:main"
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio"]
+
+[tool.setuptools]
+packages = ["book_recommendations"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+markers = [
+  "e2e: end-to-end user-flow tests (server subprocess, install-as-user, telemetry capture)",
+  "live: tests that hit live third-party APIs (skipped on network failure)",
+]
