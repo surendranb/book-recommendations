@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "book-recommendations"
-version = "0.1.0"
+version = "0.1.1"
 description = "Book recommendations for AI agents: 'what should I read next?' answered from millions of works (OpenLibrary) — topic recommendations, blind-date serendipity spins hooked by first sentences, and free public-domain classics. Zero API keys."
 readme = "README.md"
 license = "MIT"

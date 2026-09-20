@@ -1,6 +1,6 @@
 {
   "name": "book-recommendations",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Book recommendations for AI agents: what should I read next, via NPX",
   "main": "bin/index.js",
   "bin": {
