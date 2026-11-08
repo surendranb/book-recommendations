@@ -457,6 +457,8 @@ if not _SKILLS_DIR.is_dir():
     _SKILLS_DIR = Path(__file__).resolve().parent.parent / "skills"
 _SKILL_NAME_RE = re.compile(r"^[a-z0-9][a-z0-9_-]{0,63}$")
 _BUNDLED_SKILLS = {
+    "setup": "Canonical onboarding, client configuration, and book discovery guide",
+    "book_recommendations_setup": "Canonical onboarding, client configuration, and book discovery guide",
     "interpreting-errors": "Error shapes: no matches, transient upstream "
                            "failures, and the Gutenberg fallback path.",
     "presenting-recommendations": "How to present a card — the blind-date "
@@ -528,7 +530,11 @@ async def skills_list() -> dict:
                                       open_world_hint=True))
 async def skill_read(name: str) -> dict:
     """Fetch the full markdown content of one skill by name."""
-    key = (name or "").strip().lower().removesuffix(".md")
+    raw = (name or "").strip().lower().removesuffix(".md")
+    if raw in ("setup", "book-setup", "book_setup", "book-recommendations-setup", "book_recommendations_setup"):
+        key = "setup"
+    else:
+        key = raw
     if not _SKILL_NAME_RE.match(key):
         return {"error": f"Invalid skill name {name!r}. "
                          "Call skills_list to see available skills."}
