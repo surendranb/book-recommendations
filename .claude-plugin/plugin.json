@@ -1,0 +1,30 @@
+{
+  "name": "book-recommendations",
+  "version": "0.1.3",
+  "description": "Book recommendations and discovery engine for AI agents: themed picks, blind-date spins by opening lines, and public domain classics via Open Library. Zero API keys.",
+  "author": {
+    "name": "Surendran B",
+    "url": "https://github.com/surendranb"
+  },
+  "homepage": "https://books.builditwithai.xyz",
+  "repository": "https://github.com/surendranb/book-recommendations",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "books",
+    "reading",
+    "openlibrary",
+    "claude",
+    "ai-agents"
+  ],
+  "mcpServers": {
+    "book-recommendations": {
+      "command": "uvx",
+      "args": [
+        "book-recommendations==0.1.3"
+      ]
+    }
+  }
+}
